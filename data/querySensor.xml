@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Result status="0" version="1">
+    <UserSensor SID="859D0E82-F53E-461a-BD47-29F347BEC7E6"><![CDATA[
+        {
+            "UpdateTime": "20221108-225339",
+            "Name": "到價",
+            "SensorType": 0,
+            "SourceType": "到價",
+            "ScriptType": 6,
+            "ScriptName": "Arrive Price",
+            "ScriptCount": "1",
+            "Symbol": "0:FITXN11.TF",
+            "SymbolRange": "0:FITXN11.TF?-1?-1?-1?-1",
+            "SymbolChangeWithRun": false,
+            "BenchmarkEnable": 0,
+            "ClassifyFolder": "",
+            "ClassifyFolderID": "",
+            "CreateTime": "2022/11/01 00:09:07",
+            "Benchmark": "",
+            "BenchmarkSourceType": "",
+            "BenchmarkScriptType": 0,
+            "BenchmarkScriptName": "",
+            "BenchmarkScriptCount": "1",
+            "TradeName": "",
+            "TradeNameState": 0,
+            "PushCheck": false,
+            "SensorTrade":
+            {
+                "TradeSet": "",
+                "TradeExtra": ""
+            },
+            "SensorParam":
+            {
+                "BS": 0,
+                "Freq": 2,
+                "TriggerSetting": 3,
+                "Comment": "",
+                "SoundEnable": 1,
+                "Sound": "到價.wav",
+                "TotalBar": 200,
+                "MaxBarBack": 0,
+                "CalcEverytick": 1,
+                "FirstBarDate": 20221029,
+                "CalcType": 1,
+                "ScriptVersion": 1,
+                "DateEdited": 0,
+                "ScriptAlignModes": "1=0;2=0;"
+            },
+            "BenckmarkSensorParam":
+            {
+                "BenchmarkFreq": 0,
+                "BenchmarkTotalBar": 0,
+                "BenchmarkMaxBarBack": 0,
+                "BenchmarkCalcRTUpdate": 0,
+                "BenchmarkFirstBarDate": 20221025,
+                "BenchmarkCalcType": 2,
+                "BMScriptAlignModes": "1=0;2=0;",
+                "BenchmarkScriptVersion": 1,
+                "BenchmarkDateEdited": 0
+            },
+            "Script":
+            {
+                "ID": "902ee595796e4b23882bb2578ab6305c",
+                "GroupID": "",
+                "ParamList":
+                {
+                    "Ver": "390fe86a-ffbf-4ae9-84c5-82dff4e114c3",
+                    "Param":
+                    [
+                        {
+                            "name": "1:大於等於/2:小於等於",
+                            "varname": "cross_way",
+                            "type": "1",
+                            "value": "2.000000",
+                            "dblsubtype": "0",
+                            "dblsubvalue": ""
+                        },
+                        {
+                            "name": "到價通知價格",
+                            "varname": "arrive_price",
+                            "type": "1",
+                            "value": "13395.000000",
+                            "dblsubtype": "0",
+                            "dblsubvalue": ""
+                        }
+                    ]
+                }
+            },
+            "BenchmarkScript":
+            {
+                "Script":
+                {
+                    "ID": "",
+                    "GroupID": "",
+                    "ParamList":
+                    {
+                        "Ver": "",
+                        "Param":
+                        []
+                    }
+                }
+            }
+        }
+
+    ]]>
+    </UserSensor>
+</Result

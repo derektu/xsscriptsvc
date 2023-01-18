@@ -1,0 +1,27 @@
+{
+  "name": "xsscriptsvc",
+  "version": "1.0.0",
+  "description": "提供XS腳本相關的服務",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha --no-timeouts",
+    "dev": "node lib/app.js"
+  },
+  "author": "derektu123@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^8.3.2"
+  },
+  "dependencies": {
+    "archiver": "^5.3.1",
+    "lodash": "^4.17.21",
+    "log4js": "^6.3.0",
+    "minimist": "^1.2.6",
+    "moment": "^2.29.3",
+    "node-fetch": "^2.6.1",
+    "xmldom": "^0.6.0",
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "morgan": "^1.10.0"
+  }
+}

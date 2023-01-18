@@ -1,0 +1,33 @@
+<Result status="0">
+    <Scripts AppID="DAQXQLITE" UserID="UNIDOLF" Version="2" Lang="TW" StatusMask="34">
+        <Script Type="3" Name="Arrive Price" ID="902ee595796e4b23882bb2578ab6305c" ReturnType="0" ExecType="1" Folder="/" UpdateTime="20221101-002241" CompileStatus="0" StatusMask="34">
+            <Desc><![CDATA[]]></Desc>
+            <Code><![CDATA[Input: cross_way(1, "1:大於等於/2:小於等於");
+Input: arrive_price(10000, "到價通知價格");
+Var:bar_price(0);
+
+bar_price = GetField("收盤價", "1")[0];
+
+If cross_way = 1 Then
+Begin
+        If barfreq = "Min" and barinterval = 1 and bar_price >= arrive_price Then
+        Begin
+                RetMsg = Text("到價", bar_price);
+                ret=1;
+        End;
+End;
+
+If cross_way = 2 Then
+Begin
+        If barfreq = "Min" and barinterval = 1 and bar_price <= arrive_price Then
+        Begin
+                RetMsg = Text("到價", bar_price);
+                ret=1;
+        End;
+End;]]></Code>
+            <Arg><![CDATA[<Arg seed="bbca245b-e0ec-4355-becd-08d43555c36f" version="1"><Param name="方向: 1大於等於/2小於等於" varname="cross_way" type="1" subtype="0" value="1" isSerial="0" isArray="0" isRef="0" inputkind="0" quickedit="0" keytype="0" /><Param name="到價通知價格" varname="arrive_price" type="1" subtype="0" value="10000" isSerial="0" isArray="0" isRef="0" inputkind="0" quickedit="0" keytype="0" /></Arg>]]></Arg>
+            <Plots><![CDATA[<Plots seed="f10f5b47-4a1f-4ccb-86eb-fc13594dcab4" version="1" />]]></Plots>
+            <Extra><![CDATA[<Extra><TotalBar val="200" /><FirstBarDate val="0" /><Maxbb val="20" /><ScriptRunVer val="1" /><script><freq support="2;8;9;10;11;12;13;14;15;16" /></script></Extra>]]></Extra>
+        </Script>
+    </Scripts>
+</Result>
