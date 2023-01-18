@@ -4,10 +4,12 @@
 
 ## Installation
 
-$ npm ci            # 不要用npm install, 不然package-lock.json會被異動
-$ npm run dev       # for local development, port=8686
-$ pm2 start local.config.js         # for local development test for pm2
-$ pm2 start server.config.js        # 如果是在203.67.19.129, 則使用這一個來deploy pm2
+```
+$ npm ci                        # 不要用npm install, 不然package-lock.json會被異動
+$ npm run dev                   # for local development, port=8686
+$ pm2 start local.config.js     # for local development test for pm2
+$ pm2 start server.config.js    # 如果是在203.67.19.129, 則使用這一個來deploy pm2
+```
 
 ## API
 
