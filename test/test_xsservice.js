@@ -5,7 +5,7 @@ const XSScriptType = require('../lib/xsscripttype');
 const XSRequest = require('../lib/xsrequest');
 const assert = require('assert');
 
-describe("Test XSService", ()=> {
+describe("XSService", ()=> {
     it("test queryScriptById", async()=> {
         let svc = new XSService();
 

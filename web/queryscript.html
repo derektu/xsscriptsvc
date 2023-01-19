@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>查詢特定腳本內容</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit-icons.min.js"></script>
+</head>
+<body>
+    <div class="uk-container uk-container-small">
+        <h3 class="uk-margin-top">查詢特定腳本內容</h3>
+        <hr/>
+
+        <form class="uk-form-horizontal uk-form-small" method="GET" action="api/script" target="_blank">
+
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-select">AppID</label>
+                <div class="uk-form-controls">
+                    <select class="uk-select" id="appid" name="appid">
+                        <option>DAQ</option>
+                        <option>DAQXQLITE</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-text">UserID</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" id="userid" name="userid" type="text" placeholder="輸入用戶帳號...">
+                </div>
+            </div>
+
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-select">腳本類型</label>
+                <div class="uk-form-controls">
+                    <select class="uk-select" id="type" name="type">
+                        <option value="1">函數(Fnc)</option>
+                        <option value="2">指標(Indicator)</option>
+                        <option value="3">警示(Sensor)</option>
+                        <option value="4">選股(Filter)</option>
+                        <option value="7">自動交易(AT)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-text">腳本Guid</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" id="guid" name="guid" type="text" placeholder="輸入腳本的guid...">
+                </div>
+            </div>
+
+            <input class="uk-button uk-button-default uk-margin uk-button-primary" type="submit" name="submit" value="查詢" />
+        
+        </form>
+    </div>
+</body>
+</html>

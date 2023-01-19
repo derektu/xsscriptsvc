@@ -4,7 +4,7 @@ module.exports = {
         {
             name   : "xsscriptsvc",
             script : "./lib/app.js",
-            args : "--port=8686 --xsservice=http://127.0.0.1/xsserviceuat",
+            args : "--port=8686 --xsservice=http://127.0.0.1/xsserviceuat" --url=https://pm.moneydj.com/xsscript,
             watch : true,
             ignore_watch : [ "node_modules", "logs" ]    
         },
