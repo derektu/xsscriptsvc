@@ -77,3 +77,11 @@ http://<server>/api/userscripts?appid=<AppID>&userid=<UserID>&type=<ScriptType>
 
 - 查詢時需傳入腳本類型, 1=函數, 2=指標, 3=Sensor, 4=選股, 7=自動交易. 如果不傳的話則回傳所有腳本, 不分類.
 
+### 下載用戶某種類型的腳本資訊 
+
+```
+http://<server>/api/zipuserscripts?appid=<AppID>&userid=<UserID>&type=<ScriptType>
+```
+
+回傳產生的zip檔案, 以attachment的方式回傳. 
+
