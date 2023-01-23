@@ -4,6 +4,8 @@
 
 ## Installation
 
+- 請確定有安裝redis (for node.js bull module)
+
 ```
 $ npm ci                        # 不要用npm install, 不然package-lock.json會被異動
 $ npm run dev                   # for local development, port=8686
@@ -84,4 +86,43 @@ http://<server>/api/zipuserscripts?appid=<AppID>&userid=<UserID>&type=<ScriptTyp
 ```
 
 回傳產生的zip檔案, 以attachment的方式回傳. 
+
+### 上傳csv, 產生csv內所定義的腳本
+
+```
+http://<server>/api/zipfromcsv
+```
+
+client端需post以下資料:
+
+- csv: FILE for the CSV file
+- has_headerrow: csv是否有header row, 預設是1
+- col_appid: AppID是第幾欄, 預設是0 (0-based)
+- col_userid: UserID是第幾欄, 預設是1 (0-based)  
+- col_type: ScriptType是第幾欄, 預設是2 (0-based)
+- col_guid: Guid是第幾欄, 預設是3 (0-based)
+
+server收到request之後, 會回傳
+
+```
+{
+    status: <url>
+}
+```
+
+Client端可以呼叫\<url\>, 取得這個zip task執行的狀態. Url會回傳以下內容
+
+```
+{
+    taskId: '..', 
+    finished: ..,
+    progress: '..',
+    retValue: '..'
+}
+```
+
+- taskId是一個unique的字串, 代表這一次上傳,
+- finished是true or false, 
+- 如果是true的話, 則可以從retValue內得到一個可以下載zip檔案的路徑
+- 如果是false的話, 則可以檢視progress, 這是一個字串, 說明目前處理的進度
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>上傳csv來取得腳本</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit-icons.min.js"></script>
+</head>
+<body>
+    <div class="uk-container uk-container-small">
+        <h3 class="uk-margin-top">上傳csv來取得腳本</h3>
+        <hr/>
+
+        <form class="uk-form-horizontal uk-form-small" method="POST" action="api/zipfromcsv" enctype="multipart/form-data" target="_blank">
+
+            <div class="uk-margin">
+                <label class="uk-form-label">選擇CSV檔案</label>
+                <div class="uk-form-controls">
+                    <div uk-form-custom="target: true" class="uk-width-medium">
+                        <input type="file" name="csv">
+                        <input class="uk-input" type="text" placeholder="選擇CSV檔案..." disabled>
+                    </div>    
+                </div>
+            </div>
+
+            <div class="uk-margin">
+                <label class="uk-form-label">標題Row</label>
+                <div class="uk-form-controls">
+                    <input class="uk-checkbox" id="has_headerrow" name="has_headerrow" value="1" type="checkbox">
+                    <label>(有沒有標題列)</label>
+                </div>
+            </div>
+
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-text">Col#(AppID)</label>
+                <div class="uk-form-controls uk-width-medium">
+                    <input class="uk-input" id="col_appid" name="col_appid" type="text" value="0">
+                </div>
+            </div>
+
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-text">Col#(UserIDID)</label>
+                <div class="uk-form-controls uk-width-medium">
+                    <input class="uk-input" id="col_userid" name="col_userid" type="text" value="1">
+                </div>
+            </div>
+
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-text">Col#(Guid)</label>
+                <div class="uk-form-controls uk-width-medium">
+                    <input class="uk-input" id="col_guid" name="col_guid" type="text" value="2">
+                </div>
+            </div>
+        
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-text">Col#(ScriptType)</label>
+                <div class="uk-form-controls uk-width-medium">
+                    <input class="uk-input" id="col_type" name="col_type" type="text" value="3">
+                </div>
+            </div>
+
+            <input class="uk-button uk-button-default uk-margin uk-button-primary" type="submit" name="submit" value="上傳" />        
+        </form>
+    </div>
+</body>
+</html>
