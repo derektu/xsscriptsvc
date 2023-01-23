@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>查詢Sensor的自訂腳本內容</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit-icons.min.js"></script>
+</head>
+<body>
+    <div class="uk-container uk-container-small">
+        <h3 class="uk-margin-top">查詢Sensor的自訂腳本內容</h3>
+        <hr/>
+
+        <form class="uk-form-horizontal uk-form-small" method="GET" action="api/sensorscript" target="_blank">
+
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-select">AppID</label>
+                <div class="uk-form-controls uk-width-medium">
+                    <select class="uk-select" id="appid" name="appid">
+                        <option>DAQ</option>
+                        <option>DAQXQLITE</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-text">UserID</label>
+                <div class="uk-form-controls uk-width-medium">
+                    <input class="uk-input" id="userid" name="userid" type="text" placeholder="輸入用戶帳號...">
+                </div>
+            </div>
+
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-horizontal-text">SensorGuid</label>
+                <div class="uk-form-controls uk-width-medium">
+                    <input class="uk-input" id="guid" name="guid" type="text" placeholder="輸入Sensor的guid...">
+                </div>
+            </div>
+
+            <input class="uk-button uk-button-default uk-margin uk-button-primary" type="submit" name="submit" value="查詢" />
+        
+        </form>
+    </div>
+</body>
+</html>

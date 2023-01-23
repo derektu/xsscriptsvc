@@ -47,6 +47,14 @@ http://<server>/api/script?appid=<AppID>&userid=<UserID>&type=<ScriptType>&guid=
 - invisible為true/false, true表示腳本是鎖碼的,
 - folder是腳本的儲存路徑, 預設是"/",
 
+### 查詢Sensor對應的自訂腳本的資訊 
+
+```
+http://<server>/api/sensorscript?appid=<AppID>&userid=<UserID>&guid=<Guid>
+```
+
+如果Sensor對應的是自訂腳本(非系統腳本), 則回傳這個腳本的內容, 格式同 /script
+
 ### 查詢用戶某種類型的腳本資訊 
 
 ```
