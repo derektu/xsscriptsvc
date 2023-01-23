@@ -5,7 +5,6 @@ const moment = require('moment');
 
 const XSService = require('../lib/xsservice');
 const XSScriptType = require('../lib/xsscripttype');
-const XSScriptFileSvc = require('../lib/xsscriptfilesvc');
 const TaskQueue = require('../lib/taskqueue');
 
 describe.only("TaskQueue", async ()=> {
