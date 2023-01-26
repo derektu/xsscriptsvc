@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>查詢Sensor的自訂腳本內容</title>
+    <title>查詢Sensor的自訂腳本ID</title>
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/css/uikit.min.css" />
 
@@ -12,10 +12,10 @@
 </head>
 <body>
     <div class="uk-container uk-container-small">
-        <h3 class="uk-margin-top">查詢Sensor的自訂腳本內容</h3>
+        <h3 class="uk-margin-top">查詢Sensor的自訂腳本ID</h3>
         <hr/>
 
-        <form class="uk-form-horizontal uk-form-small" method="GET" action="api/sensorscript" target="_blank">
+        <form class="uk-form-horizontal uk-form-small" method="GET" action="api/sensorscriptid" target="_blank">
 
             <div class="uk-margin">
                 <label class="uk-form-label" for="form-horizontal-select">AppID</label>
@@ -35,9 +35,9 @@
             </div>
 
             <div class="uk-margin">
-                <label class="uk-form-label" for="form-horizontal-text">SensorGuid</label>
+                <label class="uk-form-label" for="form-horizontal-text">SensorId</label>
                 <div class="uk-form-controls uk-width-medium">
-                    <input class="uk-input" id="guid" name="guid" type="text" placeholder="輸入Sensor的guid...">
+                    <input class="uk-input" id="sensor" name="sensor" type="text" placeholder="輸入Sensor的id...">
                 </div>
             </div>
 
