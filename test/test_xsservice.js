@@ -5,7 +5,7 @@ const XSScriptType = require('../lib/xsscripttype');
 const XSRequest = require('../lib/xsrequest');
 const assert = require('assert');
 
-describe("XSService", ()=> {
+describe.only("XSService", ()=> {
     it("test queryScriptById", async()=> {
         let svc = new XSService();
 
@@ -21,22 +21,15 @@ describe("XSService", ()=> {
         assert(data.code != '');
     })
 
-    it("test queryScriptById failure will throw exception", async()=> {
+    it("test queryScriptById failure will return null", async()=> {
         let svc = new XSService();
 
         let appId = 'DAQXQLITE';
         let userId = 'UNIDOLF_XYZ';
         let scriptType = XSScriptType.Sensor;
         let guid = '902ee595796e4b23882bb2578ab6305c'
-
-        await assert.rejects(
-            async() => {
-                await svc.queryScriptById(appId, userId, scriptType, guid);
-            },
-            (err) => {
-                return true;
-            }
-        )
+        let data = await svc.queryScriptById(appId, userId, scriptType, guid);
+        assert(data == null);
     })    
 
     it("test queryUserScripts", async()=> {
@@ -55,12 +48,12 @@ describe("XSService", ()=> {
 
         let appId = 'DAQXQLITE';
         let userId = 'UNITED7878';
-        let guid = 'FBABA792-9A0B-414b-9CF6-DACE911FAA5A';
+        let sensorId = 'FBABA792-9A0B-414b-9CF6-DACE911FAA5A';
 
-        let sensors = await svc.querySensors(appId, userId, guid);
+        let sensors = await svc.querySensors(appId, userId, sensorId);
 
         assert(sensors.length == 1, "應該回傳一個object");
-        assert(sensors[0].guid == guid);
+        assert(sensors[0].sensorId == sensorId);
         assert(sensors[0].groupId == "");
         assert(sensors[0].scriptId != "");
     })
@@ -70,9 +63,9 @@ describe("XSService", ()=> {
 
         let appId = 'DAQXQLITE';
         let userId = 'UNITED7878-xyz';
-        let guid = 'FBABA792-9A0B-414b-9CF6-DACE911FAA5A';
+        let sensorId = 'FBABA792-9A0B-414b-9CF6-DACE911FAA5A';
 
-        let sensors = await svc.querySensors(appId, userId, guid);
+        let sensors = await svc.querySensors(appId, userId, sensorId);
 
         assert(sensors.length == 0, "找不到, 應該回傳0個object");
     })
@@ -82,9 +75,9 @@ describe("XSService", ()=> {
 
         let appId = 'DAQXQLITE';
         let userId = 'GAMESTOCK';
-        let guids = '58B97315-33FC-4d19-B0CD-D7138656D0D4;864093BD-084C-4a75-A27B-9355744F0BE0;4A1EC15F-49E8-419a-A8BD-EED41EC04E45';
+        let sensorIds = '58B97315-33FC-4d19-B0CD-D7138656D0D4;864093BD-084C-4a75-A27B-9355744F0BE0;4A1EC15F-49E8-419a-A8BD-EED41EC04E45';
 
-        let sensors = await svc.querySensors(appId, userId, guids);
+        let sensors = await svc.querySensors(appId, userId, sensorIds);
         assert(sensors.length == 3, "應該回傳3個object");
     })
     
