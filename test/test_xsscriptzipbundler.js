@@ -65,7 +65,7 @@ describe.only("XSScriptBundler", async ()=> {
         let generator = new XSScriptBundler();
         let csvFile = './data/scripts.csv';
         let zipFile = `./output/csv.zip`;
-        let csvOption = new CSVOption(true, 0, 1, 3, 2);
+        let csvOption = new CSVOption(true, 0, 1, 2, 3);
         await generator.bundleScriptsFromCSV(svc, csvFile, csvOption, zipFile, true);
     })
 
@@ -74,7 +74,7 @@ describe.only("XSScriptBundler", async ()=> {
         let generator = new XSScriptBundler();
         let csvFile = './data/scripts.csv';
         let zipFile = `./output/scripts`;
-        let csvOption = new CSVOption(true, 0, 1, 3, 2);
+        let csvOption = new CSVOption(true, 0, 1, 2, 3);
         await generator.bundleScriptsFromCSV(svc, csvFile, csvOption, zipFile, true);
     })
 
@@ -83,7 +83,7 @@ describe.only("XSScriptBundler", async ()=> {
         let generator = new XSScriptBundler();
         let csvFile = './data/scripts(noheaderrow).csv';
         let zipFile = `./output/csv(noheaderrow).zip`;
-        let csvOption = new CSVOption(false, 0, 1, 3, 2);
+        let csvOption = new CSVOption(false, 0, 1, 2, 3);
         await generator.bundleScriptsFromCSV(svc, csvFile, csvOption, zipFile, true);
     })
 
