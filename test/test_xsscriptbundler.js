@@ -130,4 +130,14 @@ describe.only("XSScriptBundler", async ()=> {
         let csvOption = new CSVOption(false, 0, 1, 2, 3);
         await generator.bundleScriptsFromCSV(svc, csvFile, csvOption, zipFile);
     })
+
+    it("test bundleScriptsFromCSV(file|has headerrow|flatten|duplicate)", async()=> {
+        let svc = new XSService();
+        let generator = new XSScriptBundler();
+        let csvFile = './data/scripts_duplicate.csv';
+        let zipFile = `./output/scripts-flatten-duplicate`;
+        let csvOption = new CSVOption(true, 0, 1, 2, 3);
+        await generator.bundleScriptsFromCSV(svc, csvFile, csvOption, zipFile, {keepFolder:false});
+    })
+
 })
